@@ -1,4 +1,4 @@
-// 倒着想
+// 976. 三角形的最大周长
 function largestPerimeter(A: number[]): number {
   /** 能否组成三角形 */
   function isTriangle(a: number, b: number, c: number) {
@@ -7,7 +7,12 @@ function largestPerimeter(A: number[]): number {
   }
 
   A.sort((a, b) => a - b);
-  console.log(A);
+  // 从最长边开始取
+  for (let i = A[A.length - 1]; i >= 2; i--) {
+    if (isTriangle(A[i], A[i - 1], A[i - 2])) {
+      return A[i] + A[i - 1] + A[i - 2];
+    }
+  }
 
   return 0;
 }
