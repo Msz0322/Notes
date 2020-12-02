@@ -31,9 +31,9 @@ function preorderTraversal(root: TreeNode | null): number[] {
   if (!root) return [];
 
   let result: number[] = [];
-  let stack = [root];
+  let stack = [];
 
-  let node = stack.pop();
+  let node = root;
 
   while (node) {
     result.push(node.val);
@@ -50,5 +50,3 @@ function preorderTraversal(root: TreeNode | null): number[] {
 // 思考：
 // Q：为什么要用栈而不是队列？
 // A：因为前序遍历为深度遍历(dfs)，队列无法回溯之前的节点，保留节点关系。
-// Q：
-
