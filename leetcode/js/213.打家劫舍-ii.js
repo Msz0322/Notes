@@ -13,4 +13,3 @@ var rob = function(nums) {
 
 };
 // @lc code=end
-
